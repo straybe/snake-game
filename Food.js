@@ -1,9 +1,14 @@
 class Food {
-    constructor (x, y) {
+    constructor (x, y, ctx) {
         this.x = x;
         this.y = y;
-        this.width = 10;
-        this.height = 10;
+        this.width = 20;
+        this.height = 20;
+        this.ctx = ctx;
+    }
+
+    draw () {
+        this.ctx.fillRect(this.x, this.y, this.width, this.height);
     }
 }
 

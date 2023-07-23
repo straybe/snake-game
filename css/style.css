@@ -1,7 +1,11 @@
 body {
+    background-image: url(../img/snake.jpg);
+    background-size: contain;
     text-align: center;
 }
 
 canvas {
+    background-image: url(../img/patron.png);
+    background-size: contain;    
     border: solid;
 }

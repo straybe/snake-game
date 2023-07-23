@@ -10,5 +10,12 @@ function getRPos (init, end) {
     const ctx = canvas.getContext('2d');
     let snake = new Snake(ctx);
     const food = new Food(getRPos(0, 500), getRPos(0, 500), ctx);
+
+    // funcion para la actualizacion de la pantalla 
+    setInterval(function(){
+      snake.move();
+      snake.draw();
+    }, 1000/5);
+
     food.draw();
   })();  

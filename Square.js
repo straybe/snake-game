@@ -2,6 +2,7 @@ class Square {
     constructor (x, y, ctx) {
         this.x = x;
         this.y = y;
+        this.ctx = ctx;
         this.width = 20;
         this.height = 20;
         this.back = null;// cuadrado trasero
@@ -19,6 +20,35 @@ class Square {
      */
     hasBack () {
         return this.back !== null;
+    }
+
+    // Las siguientes funciones realizan los movimientos necesarios a los cuadros para representar el movimiento
+    copy () {
+        if (this.hasBack()) {
+            this.back.copy();
+            this.back.x = this.x;
+            this.back.y = this.y;
+        }
+    }
+
+    right () {
+        this.copy();
+        this.x += 20;
+    }
+
+    left () {
+        this.copy();
+        this.x -= 20;
+    }
+
+    up () {
+        this.copy();
+        this.y -= 20;
+    }
+
+    down () {
+        this.copy();
+        this.y += 20;
     }
 }
 

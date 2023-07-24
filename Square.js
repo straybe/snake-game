@@ -15,6 +15,15 @@ class Square {
             this.back.draw();
         }
     }
+
+    /**
+     * @brief Crea un nuevo elemento detras
+     */
+    add () {
+        if (this.hasBack()) return this.back.add();
+
+        this.back = new Square(this.x, this.y, this.ctx);
+    }
     /**
      * @returns Si existe un cuadrado detras del actual, retorna verdadero
      */
@@ -49,6 +58,10 @@ class Square {
     down () {
         this.copy();
         this.y += 20;
+    }
+
+    hitBorder () {
+        return this.x > 480 || this.x <= 0 || this.y > 480 || this.y <= 0;
     }
 }
 
